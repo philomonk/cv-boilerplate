@@ -6,7 +6,7 @@
 % LAYOUT
 %--------------------------------
 % Margins
-\usepackage{geometry} 
+\usepackage{geometry}
 \geometry{$geometry$}
 
 % Do not indent paragraphs
@@ -29,7 +29,7 @@ $endif$
 
 % TYPOGRAPHY
 %--------------------------------
-\usepackage{fontspec} 
+\usepackage{fontspec}
 \usepackage{xunicode}
 \usepackage{xltxtra}
 % converts LaTeX specials (quotes, dashes etc.) to Unicode
@@ -48,11 +48,11 @@ $endif$
 
 % HEADINGS
 %--------------------------------
-\usepackage{sectsty} 
-\usepackage[normalem]{ulem} 
-\sectionfont{\rmfamily\mdseries} 
-\subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
-\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\rmfamily\mdseries}
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
 
 % PDF SETUP
 %--------------------------------
@@ -105,7 +105,7 @@ $if(intro)$
 $intro$
 $endif$
 
-\subsection*{Areas of Interest}
+\subsection*{Kenntnisse \& Interessen}
 $if(skills)$
 \begin{itemize}
     $for(skills)$
@@ -118,7 +118,16 @@ $endif$
 
 \vspace{25pt}
 
-\section*{Previous Experience}
+$if(education)$
+\section*{Schulbildung}
+\noindent
+$for(education)$
+\note{$education.year$}\emph{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
+\textsc{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
+$endfor$
+$endif$
+
+\section*{Praxiserfahrung}
 \noindent
 $for(experience)$
 \note{$experience.years$}\textsc{$experience.employer$}\\
@@ -126,17 +135,8 @@ $for(experience)$
 $experience.city$\\[.2cm]
 $endfor$
 
-$if(education)$
-\section*{Education}
-\noindent
-$for(education)$
-\note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
-\emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
-$endfor$
-$endif$
-
 $if(languages)$
-\section*{Languages}
+\section*{Sprachkenntnisse}
 $for(languages)$
 \emph{$languages.language$} ($languages.proficiency$)\\
 $endfor$
