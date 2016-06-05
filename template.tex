@@ -105,7 +105,7 @@ $if(intro)$
 $intro$
 $endif$
 
-\subsection*{Areas of Interest}
+\subsection*{Kenntnisse & Interessen}
 $if(skills)$
 \begin{itemize}
     $for(skills)$
@@ -118,7 +118,7 @@ $endif$
 
 \vspace{25pt}
 
-\section*{Previous Experience}
+\section*{Praxiserfahrung}
 \noindent
 $for(experience)$
 \note{$experience.years$}\textsc{$experience.employer$}\\
@@ -127,7 +127,7 @@ $experience.city$\\[.2cm]
 $endfor$
 
 $if(education)$
-\section*{Education}
+\section*{Schulbildung}
 \noindent
 $for(education)$
 \note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
@@ -136,7 +136,7 @@ $endfor$
 $endif$
 
 $if(languages)$
-\section*{Languages}
+\section*{Sprachkenntnisse}
 $for(languages)$
 \emph{$languages.language$} ($languages.proficiency$)\\
 $endfor$
