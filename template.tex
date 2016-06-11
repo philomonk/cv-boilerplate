@@ -117,7 +117,7 @@ $if(education)$
 \section*{Schulbildung}
 \noindent
 $for(education)$
-\note{$education.year$}$if(education.subject)$\emph{$education.subject$}$if(education.degree)$, $education.degree$$endif$\textsc{$education.institute$}$if(education.city)$, $education.city$$endif$\\$endif$
+\note{$education.year$}\emph{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
 \textsc{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
 $endfor$
 $endif$
