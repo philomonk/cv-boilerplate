@@ -105,18 +105,13 @@ $if(intro)$
 $intro$
 $endif$
 
-\subsection*{Kenntnisse \& Interessen}
-$if(skills)$
-\begin{itemize}
-    $for(skills)$
-      \item $skills$
-    $endfor$
-\end{itemize}
-$endif$
-
-% \vfill
-
-\vspace{25pt}
+\section*{Kenntnisse \& Interessen}
+\noindent
+$for(skills)$
+\note{$skills.years$}\textsc{$skills.employer$}\\
+\emph{$skills.job$}\\
+$skills.city$\\[.2cm]
+$endfor$
 
 $if(education)$
 \section*{Schulbildung}
