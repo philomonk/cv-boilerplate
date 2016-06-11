@@ -110,14 +110,14 @@ $endif$
 $for(skills)$
 \note{$skills.years$}\textsc{$skills.employer$}\\
 \emph{$skills.job$}\\
-$skills.city$\\[.2cm]
+$if(skills.city)$skills.city$\\$endif$[.2cm]
 $endfor$
 
 $if(education)$
 \section*{Schulbildung}
 \noindent
 $for(education)$
-\note{$education.year$}\emph{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
+\note{$education.year$}$if(education.subject)$\emph{$education.subject$}$if(education.degree)$, $education.degree$$endif$\textsc{$education.institute$}$if(education.city)$, $education.city$$endif$\\$endif$
 \textsc{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
 $endfor$
 $endif$
